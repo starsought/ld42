@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Ejector.gd" type="Script" id=1]
+[ext_resource path="res://tiles.png" type="Texture" id=2]
+[ext_resource path="res://Label.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 6 )
+
+[node name="Ejector" type="Node2D"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area" type="Area2D" parent="." index="0"]
+
+position = Vector2( 0, 6 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BareSprite" type="Sprite" parent="." index="1"]
+
+visible = false
+position = Vector2( 0, -12 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 24, 16, 24 )
+_sections_unfolded = [ "Region" ]
+
+[node name="TapeSprite" type="Sprite" parent="." index="2"]
+
+position = Vector2( 0, -12 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 16, 24, 16, 24 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Eject" parent="." index="3" instance=ExtResource( 3 )]
+
+visible = false
+margin_left = -32.0
+margin_top = -36.0
+margin_right = -32.0
+margin_bottom = -82.0
+text = "Eject Tape"
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Take" parent="." index="4" instance=ExtResource( 3 )]
+
+visible = false
+margin_left = -40.0
+margin_top = -36.0
+margin_right = -24.0
+margin_bottom = -82.0
+text = "Insert Tape"
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+

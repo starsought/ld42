@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Interface.gd" type="Script" id=1]
+[ext_resource path="res://Label.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Font_64.tres" type="DynamicFont" id=3]
+
+[node name="Interface" type="CanvasLayer"]
+
+pause_mode = 2
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="Pause" type="Node2D" parent="." index="0"]
+
+_sections_unfolded = [ "Pause" ]
+
+[node name="Fade" type="ColorRect" parent="Pause" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 576.0
+margin_bottom = 296.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0.25098 )
+
+[node name="Panel" type="ColorRect" parent="Pause/Fade" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 220.0
+margin_top = 90.0
+margin_right = 420.0
+margin_bottom = 270.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.537255, 0.239216, 0.156863, 1 )
+_sections_unfolded = [ "Margin" ]
+
+[node name="Paused" parent="Pause/Fade/Panel" index="0" instance=ExtResource( 2 )]
+
+margin_left = -30.0
+margin_top = -10.0
+margin_right = 30.0
+margin_bottom = -110.0
+custom_fonts/font = ExtResource( 3 )
+text = "paused"
+
+

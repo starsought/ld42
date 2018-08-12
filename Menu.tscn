@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://Label.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Font_48.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fade.tscn" type="PackedScene" id=5]
+
+[node name="Menu" type="Node"]
+
+script = ExtResource( 1 )
+
+[node name="Panel" type="Node2D" parent="." index="0"]
+
+[node name="Background" type="ColorRect" parent="Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 200.0
+margin_top = 100.0
+margin_right = 440.0
+margin_bottom = 260.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.537255, 0.239216, 0.160784, 1 )
+_sections_unfolded = [ "Margin" ]
+
+[node name="Label" parent="Panel" index="1" instance=ExtResource( 2 )]
+
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 200.0
+margin_top = 110.0
+margin_right = 440.0
+margin_bottom = 148.0
+custom_fonts/font = ExtResource( 3 )
+text = "Eject Tape"
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="ButtonBackground" type="ColorRect" parent="Panel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 220.0
+margin_top = 180.0
+margin_right = 420.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.417969, 0.202114, 0.145309, 1 )
+_sections_unfolded = [ "Margin" ]
+
+[node name="Button" parent="Panel" index="3" instance=ExtResource( 4 )]
+
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 220.0
+margin_top = 180.0
+margin_right = 420.0
+margin_bottom = 220.0
+custom_colors/font_color_disabled = Color( 0.722486, 0.925781, 0.574997, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.721569, 0.92549, 0.572549, 1 )
+text = "START"
+
+[node name="Fade" parent="." index="1" instance=ExtResource( 5 )]
+
+visible = false
+
+[connection signal="pressed" from="Panel/Button" to="." method="start_game"]
+
+
