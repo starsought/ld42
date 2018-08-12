@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 4, 3 )
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -60,6 +60,13 @@ frame = 1
 _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="Time" type="Timer" parent="Sprite" index="1"]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = false
+autostart = false
+
+[node name="Facetime" type="Timer" parent="Sprite" index="2"]
 
 process_mode = 1
 wait_time = 0.1

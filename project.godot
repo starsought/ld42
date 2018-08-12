@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="ludum_dare_42"
+config/name="Eject Tape"
 run/main_scene="res://Menu.tscn"
 config/icon="res://logo.png"
 

@@ -18,7 +18,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8, 6 )
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -300,6 +300,8 @@ __meta__ = {
 
 [node name="Hints" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="Area1" type="TileMap" parent="Hints" index="0"]
 
 visible = false
@@ -319,7 +321,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -2097179, 1, 0, -2097177, 1, 0, -1966079, 0, 0, -1769495, 1, 0, -1769483, 0, 0, -1835007, 0, 0, -1638411, 0, 0, -1441813, 0, 0, -1376271, 3, 0, -1245210, 0, 0, -851989, 3, 0 )
+tile_data = PoolIntArray( -2097179, 1, 0, -2097177, 1, 0, -2031615, 0, 0, -1769495, 1, 0, -1572874, 0, 0, -1376276, 0, 0, -1376271, 3, 0, -1245210, 0, 0, -917534, 0, 0, -851989, 3, 0 )
 
 [node name="Area2" type="TileMap" parent="Hints" index="1"]
 
@@ -340,7 +342,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -3604464, 2, 0, -3211256, 1, 0, -3211241, 2, 0, -2621412, 1, 0, -2621410, 1, 0, -2555891, 2, 0, -2555884, 2, 0, -2359292, 1, 0, -2359290, 1, 0, -2228209, 2, 0, -2097162, 2, 0, -2097123, 2, 0, -1966079, 2, 0, -1835007, 2, 0, -1376243, 3, 0, -1310698, 2, 0 )
+tile_data = PoolIntArray( -3604464, 2, 0, -3211256, 1, 0, -3211241, 2, 0, -2818020, 1, 0, -2818018, 1, 0, -2621420, 2, 0, -2555900, 1, 0, -2555896, 3, 0, -2555891, 2, 0, -2228209, 2, 0, -2097162, 2, 0, -2097125, 2, 0, -2031615, 2, 0, -2031583, 2, 0, -1966069, 3, 0, -1441764, 2, 0, -1376243, 3, 0, -1310698, 2, 0 )
 
 [node name="Area3" type="TileMap" parent="Hints" index="2"]
 
@@ -361,7 +363,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -5636126, 0, 0, -5242900, 1, 0, -5242895, 1, 0, -4849692, 0, 0, -4849673, 1, 0, -4522026, 0, 0, -4456466, 1, 0, -4325403, 1, 0, -4325401, 1, 0, -4325380, 1, 0, -4128803, 0, 0, -4128778, 1, 0, -3997695, 1, 0, -3735571, 0, 0, -3670044, 0, 0, -3604518, 0, 0, -3538954, 1, 0, -3407885, 1, 0, -3342358, 0, 0, -3342341, 1, 0, -3014691, 0, 0, -2752539, 0, 0, -2752524, 2, 0, -2228260, 0, 0, -2228230, 3, 0, -2228228, 3, 0, -2162694, 3, 0, -2162692, 3, 0, -2097162, 0, 0, -2097158, 3, 0, -2097156, 3, 0 )
+tile_data = PoolIntArray( -5636126, 0, 0, -5242900, 1, 0, -5242895, 1, 0, -4849692, 0, 0, -4849673, 1, 0, -4522026, 0, 0, -4456466, 1, 0, -4325403, 1, 0, -4325401, 1, 0, -4325380, 1, 0, -4128803, 0, 0, -4128778, 1, 0, -3997695, 1, 0, -3735571, 0, 0, -3670044, 0, 0, -3604518, 0, 0, -3538954, 1, 0, -3407885, 1, 0, -3342358, 0, 0, -3342341, 1, 0, -3014691, 0, 0, -2752539, 0, 0, -2752524, 2, 0, -2424850, 1, 0, -2228260, 0, 0, -2228230, 3, 0, -2228228, 3, 0, -2162694, 3, 0, -2162692, 3, 0, -2097162, 0, 0, -2097158, 3, 0, -2097156, 3, 0 )
 
 [node name="Move" parent="Hints" index="3" instance=ExtResource( 4 )]
 
@@ -448,8 +450,6 @@ position = Vector2( -248, -390 )
 
 [node name="Tapes" type="Node" parent="." index="4"]
 
-editor/display_folded = true
-
 [node name="V1" parent="Tapes" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( -280, -300 )
@@ -464,7 +464,6 @@ position = Vector2( -232, -552 )
 
 [node name="V4" type="Node2D" parent="Tapes" index="3"]
 
-editor/display_folded = true
 position = Vector2( -72, -444 )
 script = ExtResource( 8 )
 __meta__ = {
@@ -511,7 +510,7 @@ margin_left = -32.0
 margin_top = -31.0
 margin_right = -32.0
 margin_bottom = -82.0
-text = "Eject Tape?"
+text = "Eject Tape"
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="Take" parent="Tapes/V4" index="4" instance=ExtResource( 4 )]
